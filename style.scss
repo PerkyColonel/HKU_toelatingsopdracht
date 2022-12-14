@@ -1,0 +1,180 @@
+$pixel-size: 4;
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+}
+
+html {
+    position: absolute;
+    overflow: hidden;
+}
+
+body {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background-color: #291a29;
+    cursor: none;
+}
+
+#canvas {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+
+    * {
+        position: absolute;
+    }
+}
+
+.fireball {
+    position: absolute;
+    background-image: url(./images/fireball.png);
+    height: 16px * $pixel-size;
+    width: 16px * $pixel-size;
+    background-repeat: no-repeat;
+    background-size: 16px * $pixel-size;
+    image-rendering: pixelated;
+}
+
+.item {
+    height: 16px * $pixel-size;
+    width: 16px * $pixel-size;
+    background-image: url(./images/steak.png);
+    background-repeat: no-repeat;
+    background-size: 16px * $pixel-size;
+    image-rendering: pixelated;
+}
+
+.character-pointer {
+    margin-left: 32px;
+    transform-origin: left;
+    height: 16px * $pixel-size;
+    width: 16px * $pixel-size + 32px;
+    background-image: url(./images/staff.png);
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: 16px * $pixel-size;
+    image-rendering: pixelated;
+    z-index: 2;
+}
+
+.character-default {
+    height: 16px * $pixel-size;
+    width: 16px * $pixel-size;
+    image-rendering: pixelated;
+    background-repeat: none;
+    background-size: 16px * $pixel-size;
+    z-index: 10;
+
+    &[view="right"] {
+        background-image: url(./images/mage-right.png);
+    }
+
+    &[view="left"] {
+        background-image: url(./images/mage-left.png);
+    }
+}
+
+.chest {
+    transition: transform 80ms ease-in-out;
+    height: 16px * $pixel-size;
+    width: 16px * $pixel-size;
+    background-image: url(./images/chest-full.png);
+    background-repeat: no-repeat;
+    background-size: 16px * $pixel-size;
+    image-rendering: pixelated;
+}
+
+.top-left-wall {
+    height: 16px * $pixel-size;
+    width: 16px * $pixel-size;
+    background-image: url(./images/top-left-wall.png);
+    background-repeat: no-repeat;
+    background-size: 16px * $pixel-size;
+    image-rendering: pixelated;
+}
+
+.left-wall {
+    height: 16px * $pixel-size;
+    width: 16px * $pixel-size;
+    background-image: url(./images/left-wall.png);
+    background-repeat: no-repeat;
+    background-size: 16px * $pixel-size;
+    image-rendering: pixelated;
+}
+
+.top-wall {
+    height: 16px * $pixel-size;
+    width: 16px * $pixel-size;
+    background-image: url(./images/top-wall.png);
+    background-repeat: no-repeat;
+    background-size: 16px * $pixel-size;
+    image-rendering: pixelated;
+}
+
+#cursor {
+    height: 16px * $pixel-size;
+    width: 16px * $pixel-size;
+    background-image: url(./images/cursor-default.png);
+    background-repeat: no-repeat;
+    background-size: 16px * $pixel-size;
+    image-rendering: pixelated;
+    z-index: 1000;
+}
+
+.tile {
+    height: 16px * $pixel-size;
+    width: 16px * $pixel-size;
+    background-repeat: no-repeat;
+    background-size: 16px * $pixel-size;
+    image-rendering: pixelated;
+    z-index: 0;
+}
+
+.effect {
+    background-repeat: no-repeat;
+    background-size: 16px * $pixel-size;
+    image-rendering: pixelated;
+    z-index: 100;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.shadow {
+    background-repeat: no-repeat;
+    background-size: 16px * $pixel-size;
+    background-color: rgba(0, 0, 0, 0.133);
+    image-rendering: pixelated;
+    z-index: 0;
+}
+
+.frog {
+    height: 16px * $pixel-size;
+    width: 16px * $pixel-size;
+    image-rendering: pixelated;
+    background-repeat: none;
+    background-size: 16px * $pixel-size;
+
+    &[view="right"] {
+        background-image: url(./images/frog-right.png);
+    }
+
+    &[view="left"] {
+        background-image: url(./images/frog-left.png);
+    }
+}
